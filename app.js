@@ -25,7 +25,7 @@ server.use(express.json({ extended: false }));
 //     console.log(result);
 //     console.log("Stream ended...");
 // });
-server.get("/hello", async(req, res) => {
+server.get("/", async(req, res) => {
     try {
         res.json({
             status: 200,
