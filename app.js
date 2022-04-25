@@ -9,19 +9,21 @@ const server = express();
 server.use(express.json({ extended: false }));
 
 var result = {};
-pdfparse(pdfFile).then(function(data) {
-    server.get("/data", function(req, res) {
-        console.log(data.numpages);
-        result = {
-            numPages: data.numpages,
-            info: data.numpinfoages,
-            content: data.text,
-        };
-        res.send(result);
-    });
+server.get("/pdf", async(req, res) => {
+    pdfparse(pdfFile).then(function(data) {
+        server.get("/data", function(req, res) {
+            console.log(data.numpages);
+            result = {
+                numPages: data.numpages,
+                info: data.numpinfoages,
+                content: data.text,
+            };
+            res.send(result);
+        });
 
-    console.log(result);
-    console.log("Stream ended...");
+        console.log(result);
+        console.log("Stream ended...");
+    });
 });
 server.get("/", async(req, res) => {
     try {
