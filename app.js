@@ -25,6 +25,7 @@ pdfparse(pdfFile).then(function(data) {
     console.log(result);
     console.log("Stream ended...");
 });
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+server.listen(port);
+// server.listen(port, hostname, () => {
+//     console.log(`Server running at http://${hostname}:${port}/`);
+// });
