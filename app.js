@@ -1,11 +1,9 @@
-const hostname = "127.0.0.1";
-const port = 3000;
-
-var http = require("http");
 var express = require("express");
-// var stream = require("file-stream");
 const fs = require("fs");
 const pdfparse = require("pdf-parse");
+
+const hostname = "https://alooze-server.vercel.app/"; //"127.0.0.1"; // ||
+const port = process.env.PORT || 3000;
 
 const filepath = "demo.pdf";
 const pdfFile = fs.readFileSync(filepath);
