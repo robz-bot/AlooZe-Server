@@ -1,14 +1,14 @@
-var express = require("express");
+const express = require("express");
 // const fs = require("fs");
 // const pdfparse = require("pdf-parse");
 
 // const hostname = "https://alooze-server.vercel.app/"; //"127.0.0.1"; // ||
-const port = process.env.PORT || 3000;
 
 const filepath = "demo.pdf";
 // const pdfFile = fs.readFileSync(filepath);
 
-var server = express();
+const server = express();
+server.use(express.json({ extended: false }));
 
 // var result = {};
 // pdfparse(pdfFile).then(function(data) {
@@ -36,8 +36,8 @@ server.get("/hello", async(req, res) => {
         return res.status(500);
     }
 });
-
-server.listen(port);
+const port = process.env.PORT || 8088;
+server.listen(port, () => console.log(`${port}`));
 // server.listen(port, hostname, () => {
 //     console.log(`Server running at http://${hostname}:${port}/`);
 // });
