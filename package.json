@@ -1,0 +1,24 @@
+{
+    "name": "alooze-server-repo",
+    "version": "1.0.0",
+    "description": "Alooze server repo",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/robz-bot/AlooZe-Server.git"
+    },
+    "author": "robin",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/robz-bot/AlooZe-Server/issues"
+    },
+    "homepage": "https://github.com/robz-bot/AlooZe-Server#readme",
+    "dependencies": {
+        "express": "^4.17.3",
+        "file-stream": "^0.0.0",
+        "pdf-parse": "^1.1.1"
+    }
+}
