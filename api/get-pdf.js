@@ -9,15 +9,13 @@ router.get("/", async(req, res) => {
     try {
         pdfparse(pdfFile).then(function(data) {
             console.log(data.numpages);
-            result = {
-                numPages: data.numpages,
-                info: data.numpinfoages,
-                content: data.text,
-            };
-            res.json(result);
-
-            console.log(result);
-            console.log("Stream ended...");
+            res.json(
+                (result = {
+                    numPages: data.numpages,
+                    info: data.numpinfoages,
+                    content: data.text,
+                })
+            );
         });
     } catch (error) {
         console.log(error);
